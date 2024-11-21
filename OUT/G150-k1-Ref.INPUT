@@ -1,0 +1,32 @@
+1.000000	# kappa       : Screening parameter.
+150.000000	# Gamma       : Ratio of 'unscreened' P.E. to K.E.
+1	# periodicx   : Minimum image convention along x direction.
+1	# periodicy   : Minimum image convention along y direction.
+1	# periodicz   : Minimum image convention along z direction.
+0.010000	# deltaT      : Time step in units sqrt(3) / plasma frequency.
+1000		# stepAvg     : Steps to generate time average.
+20000		# stepEquil   : Steps to wait before reaching equilibrium.
+40000		# stepLimit   : Total number of steps in simulation.
+400		# limitCorrAv : No. of ensembles for averaging spacetime correlation.
+30		# nBuffCorr   : No. of overlapped buffers for recording spacetime correlation data.
+20		# nFunCorr    : No. of wave modes for studing spacetime correlation.
+20000		# nValCorr    : No. of temporal points in a single spacetime correlation data set.
+3		# stepCorr    : Sampling rate for spacetime correlation data set.
+400		# limitAcfAv  : No. of ensembles for averaging velocity auto-correlation.
+30		# nBuffAcf    : No. of overlapped buffers for recording velocity auto-correlation data.
+20000		# nValAcf     : No. of temporal points in a single velocity auto-correlation data set.
+3		# stepAcf     : Sampling rate for velocity auto-correlation data set.
+400		# limitDiffuseAv : No. of ensembles for averaging diffusion.
+30		# nBuffDiffuse: No. of overlapped buffers for recording diffusion data.
+20000		# nValDiffuse : No. of temporal points in a single diffusion data set.
+3		# stepDiffuse : Sampling rate for diffusion data set.
+500		# limitRdf    : No. of measurements to generate a single averaged RDF data.
+200		# sizeHistRdf : Length of RDF histogram.
+50		# stepRdf     : Sampling rate for RDF measurement.
+0		# startTrajec : Step from where we start dumping trajectory.
+50		# stepTrajec  : No. of steps for which trajectory is recorded after equilibrium.
+100000		# timeTrajec  : (x deltaT) Total time for which trajectory is recorded.
+500		# limitGrid   : No. of data sets for generating Grid data.
+15		# sizeHistGrid: No. of grid points along z-axis.
+50		# stepGrid    : Sampling frequency on the Grid.
+100		# stepDump    : Dump configuration snapshot every 'stepDump' step.

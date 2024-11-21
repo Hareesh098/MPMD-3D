@@ -1,0 +1,39 @@
+## Instructions to Use MPMD-3D
+
+### Step 1: Build the Project
+In the main directory, run the following command:
+```
+$ make clean; make
+```
+
+**Note**: The GSL scientific library is required because the Langevin thermostat uses the GSL random number generator. 
+Please ensure GSL is installed before proceeding.
+
+### Step 2: Prepare the STATE File
+There is a `STATE` file containing the initial position coordinates and velocities. This file can be either an initial 
+lattice or a restart file.
+
+### Step 3: Run the Simulation
+To run the simulation, execute:
+```
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib 
+$ nohup ./main <prefix> &
+```
+
+### Step 4: Output Files
+The following output files will be generated in the `OUT` directory:
+- `<prefix>.RESULT`
+- `<prefix>.INPUT`
+- `<prefix>.TRAJECTORY`
+- `<prefix>.STATE`
+
+### Modifying the Frictional Drag Coefficient
+If you need to change the frictional drag coefficient (equivalent to changing gas pressure), modify the value of `nu` in 
+the subroutine `Leapfrog.c`. Recompile the code before running it again.
+
+### Performance Suggestion
+The current code is limited to small system sizes (up to a few thousand particles) due to the expensive error function 
+calculation required for Ewald sums and the absence of a cutoff. For better performance, consider converting the 2D code 
+into a 3D version and using a suitable cutoff. Implementing linked lists, neighbor lists, or a combination of both will 
+significantly improve performance.
+
